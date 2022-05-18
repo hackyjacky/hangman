@@ -1,0 +1,79 @@
+{
+	"categories": [
+		{
+			"type": "Animal",
+			"words": [
+				"African savanna elephant",
+				"Black Rhino",
+				"Great White Shark",
+				"Greater One-Horned Rhino",
+				"North Atlantic Right Whale",
+				"Red Panda",
+				"Sea Lions",
+				"Snow Leopard",
+				"Tree Kangaroo",
+				"Yellowfin Tuna"
+			]
+		},
+		{
+			"type": "Book",
+			"words": [
+				"Angels and Demons",
+				"Breaking Dawn",
+				"Digital Fortress",
+				"Harry Potter and the Deathly Hallows",
+				"Life of Pi",
+				"The Da Vinci Code",
+				"The Lord of the Rings",
+				"The Kite Runner",
+				"To Kill a Mockingbird",
+				"Memoirs of a Geisha"
+			]
+		},
+		{
+			"type": "Fruit",
+			"words": [
+				"Apricot",
+				"Blueberry",
+				"Dragonfruit",
+				"Jackfruit",
+				"Kumquat",
+				"Watermelon",
+				"Papaya",
+				"Passionfruit",
+				"Persimmon",
+				"Strawberries"
+			]
+		},
+		{
+			"type": "Movie",
+			"words": [
+				"The Godfather",
+				"Raiders of the Lost Ark",
+				"The Dark Knight",
+				"The Shawshank Redemption",
+				"Forrest Gump",
+				"Inception",
+				"The Matrix",
+				"Star Wars",
+				"Interstellar",
+				"Back to the Future"
+			]
+		},
+		{
+			"type": "TV Show",
+			"words": [
+				"The Witcher",
+				"Breaking Bad",
+				"Band of Brothers",
+				"Game of Thrones",
+				"Rick and Morty",
+				"Sherlock",
+				"Firefly",
+				"The Office",
+				"Seinfeld",
+				"Better Call Saul"
+			]
+		}
+	]
+}
