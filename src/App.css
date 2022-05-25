@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -53,35 +53,37 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  margin: 20px 0 0;
-}
-
 .game-container {
-  padding: 20px 30px;
+  padding: 0px 30px;
   position: relative;
   margin: auto;
-  height: 350px;
+  /* height: 350px; */
   width: 500px;
 }
 
-/* .figure-container {
+.figure {
   fill: transparent;
-  stroke: #fff;
+  stroke: rgb(0, 0, 0);
   stroke-width: 4px;
   stroke-linecap: round;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.figure-part {
+.figure-body-part {
   display: none;
-} */
+}
 
 .phrase {
   display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.word {
+  display: flex;
+  margin: 0px 10px;
 }
 
 .letter {
@@ -108,4 +110,17 @@ h1 {
 .keyboard-key {
   width: 40px;
   height: 40px;
+}
+
+@media (max-width: 576px) {
+  .keyboard-key {
+    width: 31px;
+    height: 31px;
+  }
+
+  .game-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+  }
 }

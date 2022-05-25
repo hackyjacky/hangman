@@ -14,9 +14,13 @@ const Hangman = ({phrase, category}) => {
     return (
         <>
             <h4 className="text-end">Category: <u>{category}</u></h4>
+			
             <div className="game-container">
                 <Phrase phrase={phrase} correctLetters={correctLetters}/>
                 <Figure wrongLetters={wrongLetters}/>
+            </div>
+
+            <div>
                 <Keyboard phrase={phrase} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
             </div>
 

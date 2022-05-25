@@ -32,7 +32,7 @@ const Key = ({phrase, alphabet, correctLetters, setCorrectLetters, wrongLetters,
     }, [correctLetters, wrongLetters])
 
     return (
-        <Button className="keyboard-key" variant="secondary"  disabled={disabled} onClick={handleOnclick}>
+        <Button className="keyboard-key btn-sm" variant="secondary"  disabled={disabled} onClick={handleOnclick}>
             {alphabet.toUpperCase()}
         </Button>
     );
