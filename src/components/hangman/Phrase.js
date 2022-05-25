@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Phrase = ({phrase, correctLetters}) => {
+    const alphabets='abcdefghijklmnopqrstuvwxyz'
     return (
         <div className="phrase">
             {
@@ -10,26 +11,19 @@ const Phrase = ({phrase, correctLetters}) => {
                             {
                                 word.split("").map((letter, j) => {
                                     return(
-                                        <span className="letter" key={i+','+j}>
-                                            {correctLetters.includes(letter) ? letter : ""}
-                                        </span>
+                                        alphabets.includes(letter) || alphabets.toUpperCase().includes(letter) ? (
+                                            <span className="letter" key={i+","+j}>
+                                                {correctLetters.includes(letter) ? letter : ""}
+                                            </span>
+                                        ) : (
+                                            <span className="space" key={i+","+j}>{letter}</span>
+                                        )
                                     )
                                 })
                             }
                         </span>
                     )
                 })
-                // phrase.split("").map((letter, index) => {
-                //     return(
-                //         letter===' ' ? (
-                //             <span className="space" key={index}></span>
-                //         ) : (
-                //             <span className="letter" key={index}>
-                //                 {correctLetters.includes(letter) ? letter : ""}
-                //             </span>
-                //         )
-                //     )
-                // })
             }
         </div>
     )
