@@ -27,7 +27,7 @@ function App() {
 					setStatus={setStatus}
 				/>
 			) : (
-				<Hangman phrase={keywords[Math.floor(Math.random()*keywords.length)]} category={category}/>
+				<Hangman phrase={keywords[Math.floor(Math.random()*keywords.length)]} category={category} setPlayable={setPlayable}/>
 			)}
 		</div>
 	);
