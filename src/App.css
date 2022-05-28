@@ -61,6 +61,12 @@ body {
   width: 500px;
 }
 
+.message-container {
+  text-align: center;
+  border: grey 1px solid;
+  background-color: lightgray;
+}
+
 .figure {
   fill: transparent;
   stroke: rgb(0, 0, 0);

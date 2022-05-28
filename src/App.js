@@ -1,13 +1,21 @@
 import './App.css';
 import Category from './components/categories/Category';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Hangman from './components/hangman/Hangman';
 
 function App() {
 	const [category, setCategory] = useState('');
 	const [keywords, setKeywords] = useState([]);
 	const [status, setStatus] = useState('choose category');
+	const [playable, setPlayable] = useState(true)
+
+	useEffect(() => {
+        if (playable===false){
+			setStatus('choose category')
+			setPlayable(true)
+		}
+    }, [playable])
 
 	return (
 		<div>

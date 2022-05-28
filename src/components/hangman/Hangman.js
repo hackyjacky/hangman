@@ -1,15 +1,38 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Phrase from './Phrase';
 import Figure from './Figure';
 import Keyboard from './Keyboard';
+import Button from 'react-bootstrap/Button'
 
 
-const Hangman = ({phrase, category}) => {
-    // const [playable, setPlayable] = useState(true)
+const Hangman = ({phrase, category, setPlayable}) => {
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
+	const [show, setShow] = useState(false)
+	function playAgain(){
+        setPlayable(false)
+    }
+	const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        let isSolved=true
+        for (let i=0; i<phrase.length; i++){
+            if (!correctLetters.includes(phrase[i]) && phrase[i]!==' ' && phrase[i]!=='-'){
+                isSolved=false
+                break
+            }
+        }
+        if (wrongLetters.length===6){
+            setMessage("Game Over")
+            setShow(true)
+        }
+        else if (isSolved===true){
+            setMessage('Game Completed!')
+            setShow(true)
+        }
+    }, [correctLetters, wrongLetters])
     
     return (
         <>
@@ -20,11 +43,15 @@ const Hangman = ({phrase, category}) => {
                 <Figure wrongLetters={wrongLetters}/>
             </div>
 
-            <div>
+            {show === false ? (
                 <Keyboard phrase={phrase} correctLetters={correctLetters} setCorrectLetters={setCorrectLetters} wrongLetters={wrongLetters} setWrongLetters={setWrongLetters}/>
-            </div>
-
-            <div className="message-container"></div>
+            ) : (
+                <div className="message-container">
+                    <h4 className="mt-2">{message}</h4>
+                    <p>The answer is <i><u>{phrase}</u></i>.</p>
+                    <Button className="mb-2" variant="primary" onClick={playAgain}>Play again</Button>
+                </div>
+            )}
         </>
     )
 }
