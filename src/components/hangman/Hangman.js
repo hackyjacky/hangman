@@ -5,9 +5,10 @@ import Phrase from './Phrase';
 import Figure from './Figure';
 import Keyboard from './Keyboard';
 import Button from 'react-bootstrap/Button'
+import axios from 'axios';
 
 
-const Hangman = ({phrase, category, setPlayable}) => {
+const Hangman = ({phrase, category, setPlayable, score}) => {
     const [correctLetters, setCorrectLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
 	const [show, setShow] = useState(false)
@@ -30,6 +31,10 @@ const Hangman = ({phrase, category, setPlayable}) => {
         }
         else if (isSolved===true){
             setMessage('Game Completed!')
+            axios.post("../../../model/AddScore.php", {
+                score: new Date() - score
+            })
+            .catch(e => console.log(e))
             setShow(true)
         }
     }, [correctLetters, wrongLetters])

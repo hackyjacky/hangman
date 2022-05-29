@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import words from '../../shared/words.json';
 import Word from './Word';
 
-const Category = ({ setCategory, setKeywords, setStatus }) => {
+const Category = ({ setCategory, setKeywords, setStatus, setScore }) => {
 	const changeCategory = (category, keywords) => {
 		setCategory(category);
 		setKeywords(keywords);
 		setStatus('answer word');
+		setScore(new Date());
 	};
 
 	const [categories, setCategories] = useState([]);

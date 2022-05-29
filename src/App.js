@@ -9,6 +9,7 @@ function App() {
 	const [keywords, setKeywords] = useState([]);
 	const [status, setStatus] = useState('choose category');
 	const [playable, setPlayable] = useState(true)
+	const [score, setScore] = useState(0)
 
 	useEffect(() => {
         if (playable===false){
@@ -25,9 +26,10 @@ function App() {
 					setCategory={setCategory}
 					setKeywords={setKeywords}
 					setStatus={setStatus}
+					setScore={setScore}
 				/>
 			) : (
-				<Hangman phrase={keywords[Math.floor(Math.random()*keywords.length)]} category={category} setPlayable={setPlayable}/>
+				<Hangman phrase={keywords[Math.floor(Math.random()*keywords.length)]} category={category} setPlayable={setPlayable} score={score}/>
 			)}
 		</div>
 	);
